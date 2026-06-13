@@ -1,0 +1,15 @@
+# Extension build files
+*.xpi
+*.zip
+web-ext-artifacts/
+.env
+.amo-credentials
+.amo-upload-uuid
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

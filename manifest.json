@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "Unfollow Not Followers INSTAGRAM",
+  "version": "2.3.1",
+  "description": "Extension INSTAGRAM : repère les comptes sans follow-back. 15 désabonnements gratuits, puis lien développeur pour continuer.",
+  "author": "Unfollow Not Followers",
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["tabs", "scripting", "cookies", "storage"],
+  "host_permissions": [
+    "https://www.instagram.com/*",
+    "https://instagram.com/*",
+    "https://*.cdninstagram.com/*",
+    "https://*.fbcdn.net/*"
+  ],
+  "homepage_url": "https://lxcasm.github.io/unfollow-not-followers/",
+  "background": {
+    "scripts": ["scripts/background.js"]
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Unfollow Not Followers INSTAGRAM",
+    "default_icon": {
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.instagram.com/*",
+        "https://instagram.com/*"
+      ],
+      "js": ["scripts/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["scripts/page-bridge.js"],
+      "matches": [
+        "https://www.instagram.com/*",
+        "https://instagram.com/*"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "unfollow-not-followers@lxcasm.github.io",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}

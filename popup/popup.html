@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unfollow Not Followers INSTAGRAM</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="instagram-banner" aria-label="Extension pour Instagram">
+        <span class="instagram-icon" aria-hidden="true"></span>
+        <div>
+          <strong>Extension Instagram</strong>
+          <span>Analyse vos followers et abonnements sur instagram.com</span>
+        </div>
+      </div>
+
+      <header class="hero">
+        <div class="hero-brand">
+          <img
+            class="hero-logo"
+            src="../icons/icon-48.png"
+            alt=""
+          />
+          <div>
+            <h1>Unfollow Not Followers</h1>
+            <p class="hero-subtitle">Extension exclusive Instagram</p>
+          </div>
+        </div>
+        <p class="hero-text">
+          Repérez les comptes que vous suivez sur Instagram sans follow-back, puis
+          désabonnez-vous en toute sécurité.
+        </p>
+      </header>
+
+      <section id="profilePanel" class="profile-panel">
+        <div id="profileAvatar" class="profile-avatar">IG</div>
+        <div class="profile-body">
+          <span class="profile-label">Compte Instagram</span>
+          <strong id="profileName">Connectez-vous sur instagram.com</strong>
+          <span id="profileUsername" class="profile-username">Ouvrez Instagram pour détecter votre profil</span>
+          <div id="profileMeta" class="profile-meta hidden">
+            <span id="profileFollowers">— followers</span>
+            <span aria-hidden="true">·</span>
+            <span id="profileFollowing">— abonnements</span>
+          </div>
+        </div>
+        <span class="profile-status" id="profileStatus">En attente</span>
+      </section>
+
+      <section id="creditsPanel" class="credits-panel">
+        <img class="credits-logo" src="../icons/icon-48.png" alt="" />
+        <div class="credits-body">
+          <strong id="creditsTitle">15 désabonnements gratuits</strong>
+          <p id="creditsDesc">Lancez une analyse Instagram pour commencer.</p>
+        </div>
+        <span id="creditsBadge" class="credits-badge">15</span>
+      </section>
+
+      <section class="steps" aria-label="Étapes de l'analyse Instagram">
+        <div class="step" data-step="1">
+          <span class="step-dot">1</span>
+          <span class="step-label">Followers</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="2">
+          <span class="step-dot">2</span>
+          <span class="step-label">Abonnements</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-step="3">
+          <span class="step-dot">3</span>
+          <span class="step-label">Résultats</span>
+        </div>
+      </section>
+
+      <section id="progressPanel" class="progress-panel hidden">
+        <div class="progress-top">
+          <span id="progressPhase" class="progress-phase">Préparation…</span>
+          <span id="progressPercent" class="progress-percent">0%</span>
+        </div>
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <p id="progressMessage" class="progress-message">
+          Connexion à votre compte Instagram…
+        </p>
+      </section>
+
+      <section id="statsPanel" class="stats-panel hidden">
+        <div class="stat-card">
+          <span class="stat-value" id="statFollowers">—</span>
+          <span class="stat-label">Followers IG</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statFollowing">—</span>
+          <span class="stat-label">Abonnements IG</span>
+        </div>
+        <div class="stat-card highlight">
+          <span class="stat-value" id="statNonFollowers">—</span>
+          <span class="stat-label">Sans retour</span>
+        </div>
+      </section>
+
+      <section class="info-card">
+        <div class="info-icon">✦</div>
+        <p>
+          <strong>15 désabonnements Instagram gratuits</strong> par session, avec
+          délai de sécurité automatique entre chaque action.
+        </p>
+      </section>
+
+      <section class="controls">
+        <div id="errorBanner" class="error-banner hidden" role="alert"></div>
+        <button id="analyzeBtn" type="button" class="btn btn-primary">
+          <span class="btn-icon">✦</span>
+          <span id="analyzeBtnLabel">Analyser mon Instagram</span>
+        </button>
+        <button id="unfollowBtn" type="button" class="btn btn-dark" disabled>
+          <span id="unfollowBtnLabel">Désabonner sur Instagram</span>
+        </button>
+      </section>
+
+      <section id="resultsPanel" class="results-panel hidden">
+        <div class="results-header">
+          <h2>Abonnements Instagram sans retour</h2>
+          <span id="resultsCount" class="results-count">0</span>
+        </div>
+        <ul id="userList" class="user-list"></ul>
+        <p id="emptyState" class="empty-state hidden">
+          Parfait — tous vos abonnements Instagram vous suivent en retour.
+        </p>
+      </section>
+
+      <section id="adBanner" class="ad-banner hidden">
+        <span class="ad-tag">Soutien</span>
+        <a id="adBannerLink" href="#" target="_blank" rel="noopener noreferrer">
+          <strong id="adBannerTitle"></strong>
+          <span id="adBannerText"></span>
+        </a>
+      </section>
+
+      <p id="status" class="status" role="status"></p>
+    </div>
+
+    <div id="adModal" class="ad-modal hidden" role="dialog" aria-modal="true">
+      <div class="ad-modal-card">
+        <div class="ad-modal-header">
+          <span class="ad-tag">Soutien</span>
+          <h2>Débloquez une nouvelle analyse</h2>
+          <p>
+            Vous avez utilisé vos 15 désabonnements gratuits. Visitez le profil du
+            développeur pendant quelques secondes pour continuer.
+          </p>
+        </div>
+
+        <a
+          id="adModalLink"
+          class="ad-modal-content"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="ad-modal-image"
+            src="../icons/icon-96.png"
+            alt=""
+          />
+          <strong id="adModalTitle"></strong>
+          <span id="adModalText"></span>
+          <span class="ad-modal-cta" id="adModalCta"></span>
+        </a>
+
+        <div class="ad-timer-track">
+          <div id="adTimerBar" class="ad-timer-bar"></div>
+        </div>
+        <p id="adTimerLabel" class="ad-timer-label">Visite en cours… 8 s</p>
+
+        <button id="adContinueBtn" type="button" class="btn btn-primary" disabled>
+          Continuer l'analyse Instagram
+        </button>
+        <button id="adCancelBtn" type="button" class="btn btn-ghost">Plus tard</button>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

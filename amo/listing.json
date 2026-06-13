@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "fr": "INSTAGRAM · Unfollow Not Followers — repérez les comptes sans follow-back.",
+    "en-US": "INSTAGRAM · Unfollow Not Followers — find accounts that don't follow you back."
+  },
+  "description": {
+    "fr": "Unfollow Not Followers INSTAGRAM vous aide à nettoyer vos abonnements en identifiant les comptes que vous suivez sans follow-back.\n\nExtension exclusivement pour INSTAGRAM :\n• Fonctionne uniquement sur instagram.com\n• Analyse progressive de vos followers et abonnements\n• Résultats affichés par lots pour une utilisation fluide\n• Désabonnement en un clic avec délai de sécurité automatique\n• Aucun mot de passe collecté — utilise votre session Instagram ouverte\n\nL'extension fonctionne localement dans votre navigateur. Aucune donnée personnelle n'est envoyée à un serveur externe.\n\nPolitique de confidentialité : https://lxcasm.github.io/unfollow-not-followers/confidentialite.html",
+    "en-US": "Unfollow Not Followers INSTAGRAM helps you clean up your following list by identifying accounts you follow that don't follow you back.\n\nINSTAGRAM-only extension:\n• Works only on instagram.com\n• Progressive analysis of your followers and following\n• Results shown in batches for a smooth experience\n• One-click unfollow with automatic safety delay\n• No password collected — uses your open Instagram session\n\nThe extension runs locally in your browser. No personal data is sent to external servers.\n\nPrivacy policy: https://lxcasm.github.io/unfollow-not-followers/confidentialite.html"
+  },
+  "categories": ["social-communication"],
+  "version": {
+    "license": "MPL-2.0",
+    "approval_notes": "This extension uses Instagram's internal APIs through the user's existing browser session (cookies/CSRF). It does not collect or transmit passwords or personal data to external servers. All processing happens locally. Monetization: 15 free unfollows per session, then the user must wait 8 seconds while a sponsor link to the developer profile (https://github.com/lxcasm) is shown before starting a new analysis. No third-party ad network is used."
+  }
+}
